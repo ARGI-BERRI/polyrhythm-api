@@ -101,6 +101,11 @@ export const MOVED_PERMANENTLY: HTTPResponse = {
 };
 
 export const FOUND: HTTPResponse = {
+  code: 302,
+  name: "Found",
+};
+
+export const SEE_OTHER: HTTPResponse = {
   code: 303,
   name: "Found",
 };
