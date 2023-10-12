@@ -15,7 +15,7 @@ Polyrhythm API は Cloudflare Workers 上に構築されています。
 リクエスト
 
 ```bash
-curl http://127.0.0.1:8080/?code=1
+curl http://127.0.0.1:8080/?code=200
 ```
 
 レスポンス:
