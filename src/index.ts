@@ -9,9 +9,28 @@
  */
 
 import { Env } from "./env";
+import { fromCode } from "./status";
 
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
-    return new Response("Hello World!");
+    const id = crypto.randomUUID();
+    const code = parseInt(new URL(request.url).searchParams.get("code") ?? "");
+    const status = fromCode(code);
+    const response = {
+      id,
+      response: {
+        status,
+      },
+      request: {
+        code,
+      },
+    };
+    return new Response(JSON.stringify(response), {
+      // NOTE: Cloudflare Worker can return only 200-599 status
+      status: Math.max(200, status.code),
+      headers: {
+        "content-type": "application/json;charset=UTF-8",
+      },
+    });
   },
 };
