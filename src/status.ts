@@ -279,6 +279,11 @@ export const REQUEST_HEADER_FIELDS_TOO_LARGE: HTTPResponse = {
   name: "Request Header Field Too Large",
 };
 
+export const UNAVAILABLE_FOR_LEGAL_REASONS: HTTPResponse = {
+  code: 451,
+  name: "Unavailable For Legal Reasons",
+};
+
 //
 // Server Error Response
 //
