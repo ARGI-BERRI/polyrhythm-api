@@ -107,7 +107,7 @@ export const FOUND: HTTPResponse = {
 
 export const SEE_OTHER: HTTPResponse = {
   code: 303,
-  name: "Found",
+  name: "See Other",
 };
 
 export const NOT_MODIFIED: HTTPResponse = {
